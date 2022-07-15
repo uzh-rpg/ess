@@ -1,0 +1,60 @@
+dataset:
+  name_a: 'Cityscapes_gray'
+  name_b: 'DDD17_events'
+  DDD17_events:
+    dataset_path: ''
+    split_train: 'train'
+    shape: [200, 346]
+    nr_events_data: 20
+    nr_events_files_per_data: None
+    fixed_duration: False
+    delta_t_per_data: 50
+    require_paired_data_train: False
+    require_paired_data_val: False
+    nr_events_window: 32000
+    event_representation: 'voxel_grid'
+    nr_temporal_bins: 5
+    separate_pol: False
+    normalize_event: False
+  cityscapes_img:
+    dataset_path: ''
+    shape: [200, 352]  # [200, 352] for DDD17, [440, 640] for DSEC
+    random_crop: False
+    read_two_imgs: False
+    require_paired_data_train: False
+    require_paired_data_val: False
+task:
+  semseg_num_classes: 6 # 6 for DDD17, 11 for DSEC
+dir:
+  log: ''
+model:
+  model_name: 'ess' # ['ess', 'ess_supervised']
+  skip_connect_encoder: True
+  skip_connect_task: True
+  skip_connect_task_type: 'concat'
+  data_augmentation_train: True
+  train_on_event_labels: False # True for ESS supervised (events labels + frames labels), False for ESS UDA
+optim:
+  batch_size_a: 16
+  batch_size_b: 16
+  lr_front: 1e-5
+  lr_back: 1e-4
+  lr_decay: 1
+  num_epochs: 20
+  val_epoch_step: 1
+  weight_task_loss: 1
+  weight_cycle_pred_loss: 1
+  weight_cycle_emb_loss: 0.01
+  weight_cycle_task_loss: 0.01
+  task_loss: ['dice', 'cross_entropy']
+checkpoint:
+  save_checkpoint: True
+  resume_training: False
+  load_pretrained_weights: False
+  resume_file: ''
+  pretrained_file: ''
+hardware:
+  # num_cpu_workers: {-1: auto, 0: main thread, >0: ...}
+  num_cpu_workers: 8
+  gpu_device: 0 # [0 or 'cpu']
+
