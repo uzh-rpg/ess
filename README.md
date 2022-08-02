@@ -1,13 +1,13 @@
 # ESS: Learning Event-based Semantic Segmentation from Still Images
 
 <p align="center">
- <a href="https://youtu.be/Af2TSFmmHZw">
+ <a href="https://youtu.be/Tby5c9IDsDc">
   <img src="resources/ESS.png" alt="Transfer" width="400"/>
  </a>
 </p>
 
 This is the code for the paper **ESS: Learning Event-based Semantic Segmentation from Still Images** 
-([PDF](https://rpg.ifi.uzh.ch/docs/Arxiv22_Messikommer.pdf)) by Zhaoning Sun*, Nico Messikommer*, [Daniel Gehrig](https://danielgehrig18.github.io), and [Davide Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html).
+([PDF](https://rpg.ifi.uzh.ch/docs/Arxiv22_Messikommer.pdf)) by Zhaoning Sun*, [Nico Messikommer](https://messikommernico.github.io/)*, [Daniel Gehrig](https://danielgehrig18.github.io), and [Davide Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html). For an overview of our method, check out our [video](https://youtu.be/Tby5c9IDsDc).
 
 If you use any of this code, please cite the following publication:
 
