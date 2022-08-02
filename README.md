@@ -7,7 +7,7 @@
 </p>
 
 This is the code for the paper **ESS: Learning Event-based Semantic Segmentation from Still Images** 
-([PDF](https://rpg.ifi.uzh.ch/docs/Arxiv22_Messikommer.pdf)) by Zhaoning Sun*, [Nico Messikommer](https://messikommernico.github.io/)*, [Daniel Gehrig](https://danielgehrig18.github.io), and [Davide Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html). For an overview of our method, check out our [video](https://youtu.be/Tby5c9IDsDc).
+([PDF](https://rpg.ifi.uzh.ch/docs/ECCV22_Sun.pdf)) by Zhaoning Sun*, [Nico Messikommer](https://messikommernico.github.io/)*, [Daniel Gehrig](https://danielgehrig18.github.io), and [Davide Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html). For an overview of our method, check out our [video](https://youtu.be/Tby5c9IDsDc).
 
 If you use any of this code, please cite the following publication:
 
