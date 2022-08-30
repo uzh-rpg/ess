@@ -10,7 +10,7 @@ dataset:
     fixed_duration: False
     delta_t_per_data: 50
     require_paired_data_train: False
-    require_paired_data_val: False
+    require_paired_data_val: True
     nr_events_window: 32000
     event_representation: 'voxel_grid'
     nr_temporal_bins: 5
