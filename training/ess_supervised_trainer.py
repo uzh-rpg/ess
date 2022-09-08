@@ -55,11 +55,10 @@ class ESSSupervisedModel(training.base_trainer.BaseTrainer):
         self.models_dict = {"front_sensor_b": self.front_end_sensor_b}
 
         # Task Backend
-        if self.settings.use_task_a or self.settings.use_task_b:
-            self.task_backend = SemSegE2VID(input_c=256, output_c=self.settings.semseg_num_classes,
-                                            skip_connect=self.settings.skip_connect_task,
-                                            skip_type=self.settings.skip_connect_task_type)
-            self.models_dict["back_end"] = self.task_backend
+        self.task_backend = SemSegE2VID(input_c=256, output_c=self.settings.semseg_num_classes,
+                                        skip_connect=self.settings.skip_connect_task,
+                                        skip_type=self.settings.skip_connect_task_type)
+        self.models_dict["back_end"] = self.task_backend
 
     def createOptimizerDict(self):
         """Creates the dictionary containing the optimizer for the the specified subnetworks"""
@@ -68,13 +67,12 @@ class ESSSupervisedModel(training.base_trainer.BaseTrainer):
             return
 
         # Task
-        if self.settings.use_task_a or self.settings.use_task_b:
-            back_params = filter(lambda p: p.requires_grad, self.task_backend.parameters())
-            optimizer_back = radam.RAdam(back_params,
-                                         lr=self.settings.lr_back,
-                                         weight_decay=0.,
-                                         betas=(0., 0.999))
-            self.optimizers_dict = {"optimizer_back": optimizer_back}
+        back_params = filter(lambda p: p.requires_grad, self.task_backend.parameters())
+        optimizer_back = radam.RAdam(back_params,
+                                     lr=self.settings.lr_back,
+                                     weight_decay=0.,
+                                     betas=(0., 0.999))
+        self.optimizers_dict = {"optimizer_back": optimizer_back}
 
     def trainEpoch(self):
         self.pbar = tqdm(total=self.train_loader_sensor_b.__len__(), unit='Batch', unit_scale=True)
@@ -94,8 +92,7 @@ class ESSSupervisedModel(training.base_trainer.BaseTrainer):
     def train_step(self, input_batch):
         # Task Step
         optimizers_list = []
-        if self.settings.use_task_a or self.settings.use_task_b:
-            optimizers_list.append('optimizer_back')
+        optimizers_list.append('optimizer_back')
 
         for key_word in optimizers_list:
             optimizer_key_word = self.optimizers_dict[key_word]
@@ -269,8 +266,7 @@ class ESSSupervisedModel(training.base_trainer.BaseTrainer):
                                :]
                 img_fake, _, content_first_sensor = self.reconstructor.update_reconstruction(event_tensor)
 
-        if self.settings.use_task_a or self.settings.use_task_b:
-            self.valTaskStep(content_first_sensor, labels, losses, sensor)
+        self.valTaskStep(content_first_sensor, labels, losses, sensor)
 
         if vis_reconstr_idx != -1:
             if sensor == 'sensor_a':
