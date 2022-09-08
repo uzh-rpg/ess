@@ -100,8 +100,10 @@ The following command starts the training:
 CUDA_VISIBLE_DEVICES=<GPU_ID>, python train.py --settings_file config/settings_XXXX.yaml
 ```
 
+For testing the pre-trained models, please set `load_pretrained_weights=True` and specify the path of pre-trained weights in `pretrained_file`.
+
 ## Pre-trained Weights
-To download the pretrained weights for the models on DDD17 and DSEC in the UDA setting, please fill in your details in [this](https://docs.google.com/forms/d/e/1FAIpQLScn5XWvBcmjPoSbaIqEUoEpWeheLGpQTUeK6Pp19wx2jNCPpA/viewform?usp=sf_link) Google Form.
+To download the pre-trained weights for the models on DDD17 and DSEC in the UDA setting, please fill in your details in [this](https://docs.google.com/forms/d/e/1FAIpQLScn5XWvBcmjPoSbaIqEUoEpWeheLGpQTUeK6Pp19wx2jNCPpA/viewform?usp=sf_link) Google Form.
 
 # Acknowledgement
 Several network architectures were adapted from:

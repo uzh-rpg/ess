@@ -2,7 +2,7 @@ dataset:
   name_a: 'Cityscapes_gray'
   name_b: 'DDD17_events'
   DDD17_events:
-    dataset_path: ''
+    dataset_path: <path>
     split_train: 'train'
     shape: [200, 346]
     nr_events_data: 20
@@ -17,7 +17,7 @@ dataset:
     separate_pol: False
     normalize_event: False
   cityscapes_img:
-    dataset_path: ''
+    dataset_path: <path>
     shape: [200, 352]  # [200, 352] for DDD17, [440, 640] for DSEC
     random_crop: False
     read_two_imgs: False
@@ -26,7 +26,7 @@ dataset:
 task:
   semseg_num_classes: 6 # 6 for DDD17, 11 for DSEC
 dir:
-  log: ''
+  log: <path>
 model:
   model_name: 'ess' # ['ess', 'ess_supervised']
   skip_connect_encoder: True
@@ -50,9 +50,9 @@ optim:
 checkpoint:
   save_checkpoint: True
   resume_training: False
-  load_pretrained_weights: False
-  resume_file: ''
-  pretrained_file: ''
+  load_pretrained_weights: False # True for loading pre-trained weights
+  resume_file: <path>
+  pretrained_file: <path>
 hardware:
   # num_cpu_workers: {-1: auto, 0: main thread, >0: ...}
   num_cpu_workers: 8
