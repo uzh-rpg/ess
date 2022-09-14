@@ -19,7 +19,7 @@ dataset:
   cityscapes_img:
     dataset_path: <path>
     shape: [200, 352]  # [200, 352] for DDD17, [440, 640] for DSEC
-    random_crop: False
+    random_crop: True  # True for DDD17, False for DSEC
     read_two_imgs: False
     require_paired_data_train: False
     require_paired_data_val: False
