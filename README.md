@@ -38,12 +38,12 @@ ESS is general-purpose, which unlocks the vast amount of existing labeled image 
 for new and exciting research directions in new fields previously inaccessible for event cameras.
 
 ## Installation
+
 ### Dependencies
 If desired, a conda environment can be created using the followig command:
 ```bash
 conda create -n <env_name>
 ```
-
 As an initial step, the wheel package needs to be installed with the following command:
 ```bash
 pip install wheel
@@ -52,6 +52,9 @@ The required python packages are listed in the `requirements.txt` file.
 ```bash
 pip install -r requirements.txt
 ```
+
+### Pre-trained E2VID Model
+Pre-trained E2VID model needs to be downloaded [here](https://github.com/uzh-rpg/rpg_e2vid) and placed in `/e2vid/pretrained/`.
 
 ## Datasets
 
