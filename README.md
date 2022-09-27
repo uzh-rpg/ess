@@ -86,7 +86,8 @@ The DSEC-Semantic dataset can be downloaded [here](https://dsec.ifi.uzh.ch/dsec-
     │       └── ... 
 
 ### DDD17
-The DDD17 dataset with semantic segmentation labels can be downloaded [here](https://github.com/Shathe/Ev-SegNet).
+The original DDD17 dataset with semantic segmentation labels can be downloaded [here](https://github.com/Shathe/Ev-SegNet).
+Additionally, we provide a pre-processed DDD17 dataset with semantic labels [here](https://download.ifi.uzh.ch/rpg/ESS/ddd17_seg.tar.gz). Please do not forget to cite [DDD17](https://sensors.ini.uzh.ch/news_page/DDD17.html) and [Ev-SegNet](https://github.com/Shathe/Ev-SegNet) if you are using the DDD17 with semantic labels.
 
 ### Cityscapes
 The Cityscapes dataset can be downloaded [here](https://www.cityscapes-dataset.com/).
