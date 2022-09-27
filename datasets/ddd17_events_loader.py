@@ -64,7 +64,7 @@ class DDD17Events(Dataset):
         self.separate_pol = separate_pol
         self.normalize_event = normalize_event
         self.dirs = get_split(data_dirs, split)
-        unzip_segmentation_masks(self.dirs)
+        # unzip_segmentation_masks(self.dirs)
 
         self.files = []
         for d in self.dirs:
